@@ -16,9 +16,7 @@
 
 ![3-way training curves](assets/training_curves.png)
 
-![live dashboard](assets/dashboard.png)
-
-*실시간 대시보드(테일넷 전용): 학습 중 FLY/RANDOM loss를 5초 간격으로 추적 — `dashboard.py`*
+*차트는 세 배선(실제 파리/차수보존 재배선/무작위)의 8,000스텝 학습 곡선 — 회색 점선이 unigram 기준선. 실시간 추적용 대시보드(테일넷 전용)는 `dashboard.py`.*
 
 - 파리 배선은 학습 파라미터 160만 개(셀타입 쌍별 시냅스 세기 α + bias)로
   unigram을 확실히 깨고 문맥 학습에 진입
