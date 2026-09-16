@@ -14,6 +14,12 @@
 | 차수보존 재배선 (Maslov–Sneppen) | 2.952 | 19.1 | -0.13 |
 | 완전 무작위 배선 | 3.112 | 22.4 | +0.03 (unigram에 갇힘) |
 
+![3-way training curves](assets/training_curves.png)
+
+![live dashboard](assets/dashboard.png)
+
+*실시간 대시보드(테일넷 전용): 학습 중 FLY/RANDOM loss를 5초 간격으로 추적 — `dashboard.py`*
+
 - 파리 배선은 학습 파라미터 160만 개(셀타입 쌍별 시냅스 세기 α + bias)로
   unigram을 확실히 깨고 문맥 학습에 진입
 - 무작위 배선은 8,000스텝 내내 unigram 수준에 정체 — **학습 자체가 성립 안 함**
