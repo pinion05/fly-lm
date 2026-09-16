@@ -1,0 +1,63 @@
+corpus 1924MB
+connectome n=45,669 E=1,513,231 pairs=604
+corpus 60,000,000 vocab 107 unigram 3.0802
+FLY params 28,061
+/root/work/train_stage1.py:62: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  W = torch.sparse_coo_tensor(self.indices, vals, (self.n, self.n)).coalesce()
+[FLY] step     0 loss 5.0537 mem 13.6GB [2s]
+[FLY] step   100 loss 3.1207 mem 13.6GB [206s]
+[FLY] step   200 loss 3.0979 mem 13.6GB [411s]
+[FLY] step   300 loss 3.0849 mem 13.6GB [615s]
+[FLY] step   400 loss 3.0954 mem 13.6GB [819s]
+[FLY] step   500 loss 3.1316 mem 13.6GB [1023s]
+[FLY] step   600 loss 3.0723 mem 13.6GB [1227s]
+[FLY] step   700 loss 3.1375 mem 13.6GB [1431s]
+[FLY] step   800 loss 3.1411 mem 13.6GB [1635s]
+[FLY] step   900 loss 3.1365 mem 13.6GB [1839s]
+[FLY] step  1000 loss 3.0973 mem 13.6GB [2043s]
+[FLY] step  1100 loss 3.1503 mem 13.6GB [2247s]
+[FLY] step  1200 loss 3.1320 mem 13.6GB [2452s]
+[FLY] step  1300 loss 3.1308 mem 13.6GB [2656s]
+[FLY] step  1400 loss 3.0639 mem 13.6GB [2860s]
+[FLY] step  1500 loss 3.0948 mem 13.6GB [3064s]
+[FLY] step  1600 loss 3.1117 mem 13.6GB [3268s]
+[FLY] step  1700 loss 3.0734 mem 13.6GB [3472s]
+[FLY] step  1800 loss 3.0775 mem 13.6GB [3676s]
+[FLY] step  1900 loss 3.0706 mem 13.6GB [3880s]
+[FLY] step  2000 loss 3.0471 mem 13.6GB [4084s]
+[FLY] step  2100 loss 3.1116 mem 13.6GB [4288s]
+[FLY] step  2200 loss 3.0793 mem 13.6GB [4492s]
+[FLY] step  2300 loss 3.0150 mem 13.6GB [4696s]
+[FLY] step  2400 loss 3.0797 mem 13.6GB [4900s]
+[FLY] step  2500 loss 3.0495 mem 13.6GB [5104s]
+[FLY] step  2600 loss 3.0298 mem 13.6GB [5308s]
+[FLY] step  2700 loss 2.9976 mem 13.6GB [5512s]
+[FLY] step  2800 loss 3.0653 mem 13.6GB [5716s]
+[FLY] step  2900 loss 2.9986 mem 13.6GB [5920s]
+[FLY] step  3000 loss 3.0325 mem 13.6GB [6124s]
+[FLY] step  3100 loss 2.9955 mem 13.6GB [6328s]
+[FLY] step  3200 loss 3.0543 mem 13.6GB [6533s]
+[FLY] step  3300 loss 3.0305 mem 13.6GB [6737s]
+[FLY] step  3400 loss 2.9757 mem 13.6GB [6941s]
+[FLY] step  3500 loss 3.0393 mem 13.6GB [7145s]
+[FLY] step  3600 loss 3.0443 mem 13.6GB [7349s]
+[FLY] step  3700 loss 3.0715 mem 13.6GB [7553s]
+[FLY] step  3800 loss 3.0650 mem 13.6GB [7757s]
+[FLY] step  3900 loss 3.0821 mem 13.6GB [7961s]
+[FLY] step  3999 loss 2.9967 mem 13.6GB [8163s]
+RANDOM E=1,513,178 pairs=4225
+Traceback (most recent call last):
+  File "/root/work/train_stage1.py", line 125, in <module>
+    losses_rand = train(rand, "RANDOM")
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/work/train_stage1.py", line 101, in train
+    opt.zero_grad(); loss.backward()
+                     ^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.11/site-packages/torch/_tensor.py", line 631, in backward
+    torch.autograd.backward(
+  File "/root/venv/lib/python3.11/site-packages/torch/autograd/__init__.py", line 381, in backward
+    _engine_run_backward(
+  File "/root/venv/lib/python3.11/site-packages/torch/autograd/graph.py", line 869, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 7.77 GiB. GPU 0 has a total capacity of 15.48 GiB of which 2.54 GiB is free. Including non-PyTorch memory, this process has 12.93 GiB memory in use. Of the allocated memory 4.90 GiB is allocated by PyTorch, and 7.76 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)

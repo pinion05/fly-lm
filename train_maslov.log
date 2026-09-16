@@ -1,0 +1,54 @@
+MASLOV graph n=211,577 E=10,653,945 pairs=4,928,327
+corpus 60,000,000 vocab 107 unigram 3.0802
+MASLOV params 5,022,255
+[MASLOV] step     0 loss 6.5712 mem 9.6GB [1s]
+[MASLOV] step   200 loss 2.8526 mem 9.7GB [101s]
+[MASLOV] step   400 loss 2.9697 mem 9.7GB [201s]
+[MASLOV] step   600 loss 3.1867 mem 9.7GB [301s]
+[MASLOV] step   800 loss 3.2674 mem 9.7GB [400s]
+[MASLOV] step  1000 loss 3.0073 mem 9.7GB [500s]
+[MASLOV] step  1200 loss 3.0072 mem 9.7GB [600s]
+[MASLOV] step  1400 loss 3.0017 mem 9.7GB [700s]
+[MASLOV] step  1600 loss 3.1059 mem 9.7GB [800s]
+[MASLOV] step  1800 loss 3.0116 mem 9.7GB [900s]
+[MASLOV] step  2000 loss 3.1404 mem 9.7GB [999s]
+[MASLOV] step  2200 loss 2.8870 mem 9.7GB [1099s]
+[MASLOV] step  2400 loss 3.3050 mem 9.7GB [1199s]
+[MASLOV] step  2600 loss 3.2661 mem 9.7GB [1299s]
+[MASLOV] step  2800 loss 2.9319 mem 9.7GB [1399s]
+[MASLOV] step  3000 loss 3.4387 mem 9.7GB [1499s]
+[MASLOV] step  3200 loss 2.8300 mem 9.7GB [1598s]
+[MASLOV] step  3400 loss 3.4082 mem 9.7GB [1698s]
+[MASLOV] step  3600 loss 2.8037 mem 9.7GB [1798s]
+[MASLOV] step  3800 loss 3.0783 mem 9.7GB [1898s]
+[MASLOV] step  4000 loss 2.9905 mem 9.7GB [1998s]
+[MASLOV] step  4200 loss 2.8219 mem 9.7GB [2098s]
+[MASLOV] step  4400 loss 6.5278 mem 9.7GB [2197s]
+[MASLOV] step  4600 loss 2.9379 mem 9.7GB [2297s]
+[MASLOV] step  4800 loss 3.1667 mem 9.7GB [2397s]
+[MASLOV] step  5000 loss 3.2911 mem 9.7GB [2497s]
+[MASLOV] step  5200 loss 3.0839 mem 9.7GB [2597s]
+[MASLOV] step  5400 loss 3.0072 mem 9.7GB [2696s]
+[MASLOV] step  5600 loss 3.1462 mem 9.7GB [2796s]
+[MASLOV] step  5800 loss 2.8818 mem 9.7GB [2896s]
+[MASLOV] step  6000 loss 2.9199 mem 9.7GB [2996s]
+[MASLOV] step  6200 loss 2.8960 mem 9.7GB [3096s]
+[MASLOV] step  6400 loss 3.7299 mem 9.7GB [3196s]
+[MASLOV] step  6600 loss 2.9832 mem 9.7GB [3295s]
+[MASLOV] step  6800 loss 3.0581 mem 9.7GB [3395s]
+[MASLOV] step  7000 loss 2.6099 mem 9.7GB [3495s]
+[MASLOV] step  7200 loss 3.3316 mem 9.7GB [3595s]
+[MASLOV] step  7400 loss 3.3603 mem 9.7GB [3695s]
+[MASLOV] step  7600 loss 2.9257 mem 9.7GB [3794s]
+[MASLOV] step  7800 loss 3.0519 mem 9.7GB [3894s]
+[MASLOV] step  7999 loss 2.7881 mem 9.7GB [3994s]
+
+=== MASLOV sample ===
+Once upon a time ti id we ton mey  hee  oldgi"d wad  r. he on 
+oceys ar edddt butle edo ytoi kd,dr o e itise ou rroi lley plottuy no all o"  ame lamto lut ko oy Ifgs paal"  sboo i"l Se"i.t o af olo mo" Toy ad a masd polt ednyd  oydrd" oo" ua otss e
+f"e to fepta n"tld u a
+od otMotty u ay" ayMy too "mtos edtma egpo. o
+
+===== FINAL =====
+MASLOV 2.9521  (참고: FLY 2.6294 / RANDOM 3.1115 / unigram 3.0802)
+ALL-DONE

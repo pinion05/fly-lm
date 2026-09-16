@@ -1,0 +1,103 @@
+connectome: (151856684, 3) ['body_pre', 'body_post', 'weight']
+annotations: (211577, 36)
+nt: (1835518, 10)
+weight>=3 cut: E=10,653,945
+graph n=211,577 E=10,653,945 syn_sum=105,130,800
+E/I: +21,159,592 / -4,868,794
+cell types: 11752
+role column: superclass
+sensory=17,937 motor=815
+pairs=1,519,846
+corpus 60,000,000 vocab 107 unigram 3.0802
+FLY params 1,613,774
+[FLY] step     0 loss 5.8968 mem 9.2GB [1s]
+[FLY] step   200 loss 2.9631 mem 9.2GB [179s]
+[FLY] step   400 loss 3.0236 mem 9.2GB [356s]
+[FLY] step   600 loss 3.1746 mem 9.2GB [533s]
+[FLY] step   800 loss 3.2705 mem 9.2GB [710s]
+[FLY] step  1000 loss 2.9894 mem 9.2GB [887s]
+[FLY] step  1200 loss 3.0335 mem 9.2GB [1064s]
+[FLY] step  1400 loss 3.0717 mem 9.2GB [1241s]
+[FLY] step  1600 loss 3.1008 mem 9.2GB [1418s]
+[FLY] step  1800 loss 3.0689 mem 9.2GB [1595s]
+[FLY] step  2000 loss 3.2719 mem 9.2GB [1772s]
+[FLY] step  2200 loss 3.0568 mem 9.2GB [1949s]
+[FLY] step  2400 loss 3.4540 mem 9.2GB [2126s]
+[FLY] step  2600 loss 3.1238 mem 9.2GB [2303s]
+[FLY] step  2800 loss 2.8865 mem 9.2GB [2480s]
+[FLY] step  3000 loss 3.2552 mem 9.2GB [2657s]
+[FLY] step  3200 loss 2.9770 mem 9.2GB [2834s]
+[FLY] step  3400 loss 3.4526 mem 9.2GB [3012s]
+[FLY] step  3600 loss 2.7768 mem 9.2GB [3189s]
+[FLY] step  3800 loss 2.9243 mem 9.2GB [3366s]
+[FLY] step  4000 loss 2.8375 mem 9.2GB [3543s]
+[FLY] step  4200 loss 2.7348 mem 9.2GB [3720s]
+[FLY] step  4400 loss 2.8336 mem 9.2GB [3897s]
+[FLY] step  4600 loss 2.8477 mem 9.2GB [4074s]
+[FLY] step  4800 loss 3.0275 mem 9.2GB [4251s]
+[FLY] step  5000 loss 3.0685 mem 9.2GB [4428s]
+[FLY] step  5200 loss 2.7273 mem 9.2GB [4605s]
+[FLY] step  5400 loss 2.8073 mem 9.2GB [4782s]
+[FLY] step  5600 loss 3.0413 mem 9.2GB [4959s]
+[FLY] step  5800 loss 2.7132 mem 9.2GB [5136s]
+[FLY] step  6000 loss 2.7190 mem 9.2GB [5314s]
+[FLY] step  6200 loss 2.7150 mem 9.2GB [5491s]
+[FLY] step  6400 loss 3.4041 mem 9.2GB [5668s]
+[FLY] step  6600 loss 2.6469 mem 9.2GB [5845s]
+[FLY] step  6800 loss 2.6835 mem 9.2GB [6022s]
+[FLY] step  7000 loss 2.2659 mem 9.2GB [6199s]
+[FLY] step  7200 loss 2.8927 mem 9.2GB [6376s]
+[FLY] step  7400 loss 2.6848 mem 9.2GB [6553s]
+[FLY] step  7600 loss 2.6655 mem 9.2GB [6730s]
+[FLY] step  7800 loss 2.8601 mem 9.2GB [6907s]
+[FLY] step  7999 loss 2.5606 mem 9.2GB [7083s]
+RANDOM E=10,653,770 pairs=2,104,815
+[RANDOM] step     0 loss 5.3259 mem 9.2GB [4s]
+[RANDOM] step   200 loss 2.8606 mem 9.3GB [780s]
+[RANDOM] step   400 loss 2.9812 mem 9.3GB [1556s]
+[RANDOM] step   600 loss 3.1830 mem 9.3GB [2332s]
+[RANDOM] step   800 loss 3.3000 mem 9.3GB [3108s]
+[RANDOM] step  1000 loss 3.0203 mem 9.3GB [3883s]
+[RANDOM] step  1200 loss 3.0952 mem 9.3GB [4659s]
+[RANDOM] step  1400 loss 3.0451 mem 9.3GB [5435s]
+[RANDOM] step  1600 loss 3.1777 mem 9.3GB [6211s]
+[RANDOM] step  1800 loss 3.0325 mem 9.3GB [6987s]
+[RANDOM] step  2000 loss 3.2419 mem 9.3GB [7763s]
+[RANDOM] step  2200 loss 2.9736 mem 9.3GB [8539s]
+[RANDOM] step  2400 loss 3.3543 mem 9.3GB [9315s]
+[RANDOM] step  2600 loss 3.2511 mem 9.3GB [10091s]
+[RANDOM] step  2800 loss 3.1040 mem 9.3GB [10871s]
+[RANDOM] step  3000 loss 3.5290 mem 9.3GB [11647s]
+[RANDOM] step  3200 loss 3.0273 mem 9.3GB [12422s]
+[RANDOM] step  3400 loss 3.4851 mem 9.3GB [13198s]
+[RANDOM] step  3600 loss 2.9127 mem 9.3GB [13974s]
+[RANDOM] step  3800 loss 3.2092 mem 9.3GB [14750s]
+[RANDOM] step  4000 loss 3.0831 mem 9.3GB [15526s]
+[RANDOM] step  4200 loss 2.9638 mem 9.3GB [16302s]
+[RANDOM] step  4400 loss 3.1883 mem 9.3GB [17078s]
+[RANDOM] step  4600 loss 3.0478 mem 9.3GB [17854s]
+[RANDOM] step  4800 loss 3.2434 mem 9.3GB [18629s]
+[RANDOM] step  5000 loss 3.3543 mem 9.3GB [19405s]
+[RANDOM] step  5200 loss 3.2418 mem 9.3GB [20181s]
+[RANDOM] step  5400 loss 3.1650 mem 9.3GB [20957s]
+[RANDOM] step  5600 loss 3.2628 mem 9.3GB [21733s]
+[RANDOM] step  5800 loss 2.9938 mem 9.3GB [22509s]
+[RANDOM] step  6000 loss 3.0289 mem 9.3GB [23285s]
+[RANDOM] step  6200 loss 2.9530 mem 9.3GB [24061s]
+[RANDOM] step  6400 loss 3.8208 mem 9.3GB [24836s]
+[RANDOM] step  6600 loss 3.1049 mem 9.3GB [25612s]
+[RANDOM] step  6800 loss 3.1471 mem 9.3GB [26388s]
+[RANDOM] step  7000 loss 2.7225 mem 9.3GB [27164s]
+[RANDOM] step  7200 loss 3.3973 mem 9.3GB [27940s]
+[RANDOM] step  7400 loss 3.4713 mem 9.3GB [28716s]
+[RANDOM] step  7600 loss 3.0137 mem 9.3GB [29492s]
+[RANDOM] step  7800 loss 3.1906 mem 9.3GB [30268s]
+[RANDOM] step  7999 loss 3.0011 mem 9.3GB [31040s]
+Traceback (most recent call last):
+  File "/root/work/train_stage2.py", line 215, in <module>
+    ev_fly = evaluate(fly2, "FLY")
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/work/train_stage2.py", line 196, in evaluate
+    window = len(tokens) - WARM - TBPTT - 1
+                           ^^^^
+NameError: name 'WARM' is not defined
