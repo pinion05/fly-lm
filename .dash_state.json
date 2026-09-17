@@ -1,1 +1,1 @@
-{"fly": {"host": "ssh9.vast.ai", "port": "38448"}, "maslov": {"host": "ssh2.vast.ai", "port": "39306"}}
+{"fly": {"host": "ssh1.vast.ai", "port": "15272"}, "maslov": {"host": "ssh5.vast.ai", "port": "15434"}}

@@ -1,133 +1,27 @@
-corpus 60,000,000 vocab 107 unigram 3.0802
-[FLY20k] step     0 loss 5.8968 mem 9.2GB [1s]
-[FLY20k] step   200 loss 2.9350 mem 9.2GB [111s]
-[FLY20k] step   400 loss 3.0661 mem 9.2GB [220s]
-[FLY20k] step   600 loss 3.2747 mem 9.2GB [330s]
-[FLY20k] step   800 loss 3.2730 mem 9.2GB [439s]
-[FLY20k] step  1000 loss 3.0022 mem 9.2GB [549s]
-[FLY20k] step  1200 loss 3.0595 mem 9.2GB [658s]
-[FLY20k] step  1400 loss 3.0755 mem 9.2GB [768s]
-[FLY20k] step  1600 loss 3.0844 mem 9.2GB [878s]
-[FLY20k] step  1800 loss 3.0604 mem 9.2GB [987s]
-[FLY20k] step  2000 loss 3.1871 mem 9.2GB [1097s]
---- sample@2000 ---
-Once upon a time ti id ws n n   ,  h e   ,dgion wad  r. h   ni,  n,s ar aadnt b  seeeaotvs i<kd,,rh  e ikisnaouiahoi e,ak eloasesino a a oh  nnek amto a s ko so Ifgs paaent sb oai<lit  i.t o ao ano.e 
-[FLY20k] step  2200 loss 2.9019 mem 9.2GB [1207s]
-[FLY20k] step  2400 loss 3.3169 mem 9.2GB [1317s]
-[FLY20k] step  2600 loss 3.1238 mem 9.2GB [1427s]
-[FLY20k] step  2800 loss 2.8724 mem 9.2GB [1536s]
-[FLY20k] step  3000 loss 3.2298 mem 9.2GB [1646s]
-[FLY20k] step  3200 loss 2.8848 mem 9.2GB [1755s]
-[FLY20k] step  3400 loss 3.4197 mem 9.2GB [1865s]
-[FLY20k] step  3600 loss 2.7504 mem 9.2GB [1975s]
-[FLY20k] step  3800 loss 2.9515 mem 9.2GB [2084s]
-[FLY20k] step  4000 loss 2.8368 mem 9.2GB [2194s]
---- sample@4000 ---
-Once upon a time ddee sSe tma”egde. otl setTaeh“h llTe tkleee feat” ti.nn dle te amt,e T, dad heilm .eaeng”otehdeuy dde heialr mSlqeohaod!o! dwe gl lleg” d le, el oadt welde  ilheed o"l mrlhdoe d maea
-[FLY20k] step  4200 loss 2.8268 mem 9.2GB [2304s]
-[FLY20k] step  4400 loss 2.9082 mem 9.2GB [2414s]
-[FLY20k] step  4600 loss 2.8575 mem 9.2GB [2523s]
-[FLY20k] step  4800 loss 3.0705 mem 9.2GB [2633s]
-[FLY20k] step  5000 loss 3.0858 mem 9.2GB [2743s]
-[FLY20k] step  5200 loss 2.7009 mem 9.2GB [2852s]
-[FLY20k] step  5400 loss 2.8045 mem 9.2GB [2962s]
-[FLY20k] step  5600 loss 2.9938 mem 9.2GB [3071s]
-[FLY20k] step  5800 loss 2.6836 mem 9.2GB [3181s]
-[FLY20k] step  6000 loss 2.6969 mem 9.2GB [3291s]
---- sample@6000 ---
-Once upon a time is.oot' slod iln ty leuculn nlend tJolme satinn ultlleilukd mreowElr ominlty caaung dbit ontulnt ialcele ul ott
-hoda nteos h o.reunsyeed lfeu nt osl caend aatna ltpelsl.raydun Sel, al
-[FLY20k] step  6200 loss 2.7110 mem 9.2GB [3401s]
-[FLY20k] step  6400 loss 3.4561 mem 9.2GB [3511s]
-[FLY20k] step  6600 loss 2.6909 mem 9.2GB [3620s]
-[FLY20k] step  6800 loss 2.6976 mem 9.2GB [3730s]
-[FLY20k] step  7000 loss 2.3249 mem 9.2GB [3839s]
-[FLY20k] step  7200 loss 2.8790 mem 9.2GB [3949s]
-[FLY20k] step  7400 loss 2.8131 mem 9.2GB [4059s]
-[FLY20k] step  7600 loss 2.7014 mem 9.2GB [4168s]
-[FLY20k] step  7800 loss 2.9458 mem 9.2GB [4278s]
-[FLY20k] step  8000 loss 2.4916 mem 9.2GB [4387s]
---- sample@8000 ---
-Once upon a time aad ritd  tiuy kalmpety ay meed at utol, hey us sad idel ely t
-ous lid a fe, wakeli lis em idl as sfo ti an to he
-ve. kinkle teas" id rsa'gtt aad uIl ayd odt ameed rye ot.
-"
-ls thee s
-[FLY20k] step  8200 loss 2.3798 mem 9.2GB [4498s]
-[FLY20k] step  8400 loss 2.5865 mem 9.2GB [4608s]
-[FLY20k] step  8600 loss 2.5842 mem 9.2GB [4717s]
-[FLY20k] step  8800 loss 2.4887 mem 9.2GB [4827s]
-[FLY20k] step  9000 loss 2.7429 mem 9.2GB [4936s]
-[FLY20k] step  9200 loss 2.5035 mem 9.2GB [5046s]
-[FLY20k] step  9400 loss 2.7413 mem 9.2GB [5155s]
-[FLY20k] step  9600 loss 2.1834 mem 9.2GB [5265s]
-[FLY20k] step  9800 loss 2.7419 mem 9.2GB [5375s]
-[FLY20k] step 10000 loss 2.4631 mem 9.2GB [5487s]
---- sample@10000 ---
-Once upon a time ethred.d halred. hoke ta too bto h ut og sble af lufd bauns bedy useug, Bhut theo rDes. uthu sa pbadt lheho so."
-awuddu thheun uwut bet to"res tor? Jhe, soeyd is taghed o" h"y" mhot s
-[FLY20k] step 10200 loss 2.7260 mem 9.2GB [5598s]
-[FLY20k] step 10400 loss 2.7520 mem 9.2GB [5707s]
-[FLY20k] step 10600 loss 2.3447 mem 9.2GB [5817s]
-[FLY20k] step 10800 loss 2.5222 mem 9.2GB [5927s]
-[FLY20k] step 11000 loss 2.7818 mem 9.2GB [6036s]
-[FLY20k] step 11200 loss 2.6360 mem 9.2GB [6146s]
-[FLY20k] step 11400 loss 2.4677 mem 9.2GB [6255s]
-[FLY20k] step 11600 loss 2.6107 mem 9.2GB [6365s]
-[FLY20k] step 11800 loss 2.3765 mem 9.2GB [6475s]
-[FLY20k] step 12000 loss 2.3659 mem 9.2GB [6584s]
---- sample@12000 ---
-Once upon a time arter sas gats he wat ser at hsa res he rpe lulpey shep isis pempreid maTlieng sto ppey bey te" heppety> he sanle, my sras ys acipet sappentl as ap papgey ag las garn ad ig hepenpag. 
-[FLY20k] step 12200 loss 2.3033 mem 9.2GB [6695s]
-[FLY20k] step 12400 loss 2.2658 mem 9.2GB [6804s]
-[FLY20k] step 12600 loss 2.4417 mem 9.2GB [6914s]
-[FLY20k] step 12800 loss 2.3325 mem 9.2GB [7024s]
-[FLY20k] step 13000 loss 2.2482 mem 9.2GB [7133s]
-[FLY20k] step 13200 loss 2.1703 mem 9.2GB [7243s]
-[FLY20k] step 13400 loss 2.4508 mem 9.2GB [7353s]
-[FLY20k] step 13600 loss 2.5280 mem 9.2GB [7462s]
-[FLY20k] step 13800 loss 2.4602 mem 9.2GB [7572s]
-[FLY20k] step 14000 loss 2.2612 mem 9.2GB [7681s]
---- sample@14000 ---
-Once upon a time hat matee id n ad ad he sh anl al wre htit the osf aen hien an wfapny he wad ’d ary ud anud tthes h ermeund athe risy as h an he che tacincy wes thed he rogody ito she ras ag larit na
-[FLY20k] step 14200 loss 2.2604 mem 9.2GB [7792s]
-[FLY20k] step 14400 loss 2.3546 mem 9.2GB [7902s]
-[FLY20k] step 14600 loss 2.1988 mem 9.2GB [8011s]
-[FLY20k] step 14800 loss 2.3965 mem 9.2GB [8121s]
-[FLY20k] step 15000 loss 2.0965 mem 9.2GB [8230s]
-[FLY20k] step 15200 loss 2.6291 mem 9.2GB [8340s]
-[FLY20k] step 15400 loss 2.5859 mem 9.2GB [8450s]
-[FLY20k] step 15600 loss 2.2202 mem 9.2GB [8559s]
-[FLY20k] step 15800 loss 2.5127 mem 9.2GB [8669s]
-[FLY20k] step 16000 loss 2.4259 mem 9.2GB [8778s]
---- sample@16000 ---
-Once upon a time wor bewely wos ta seef sree anl sad she sefit hul she pare hfesy sol sais llin she sos he gi rle file bsy he lom sies ssesif bel caf lol fed urre sor inc she lre sanen to ma che sor h
-[FLY20k] step 16200 loss 2.3705 mem 9.2GB [8889s]
-[FLY20k] step 16400 loss 2.0388 mem 9.2GB [8999s]
-[FLY20k] step 16600 loss 1.9092 mem 9.2GB [9108s]
-[FLY20k] step 16800 loss 2.4182 mem 9.2GB [9218s]
-[FLY20k] step 17000 loss 2.5359 mem 9.2GB [9327s]
-[FLY20k] step 17200 loss 2.0483 mem 9.2GB [9437s]
-[FLY20k] step 17400 loss 2.2855 mem 9.2GB [9547s]
-[FLY20k] step 17600 loss 2.2024 mem 9.2GB [9656s]
-[FLY20k] step 17800 loss 2.3948 mem 9.2GB [9766s]
-[FLY20k] step 18000 loss 2.2833 mem 9.2GB [9875s]
---- sample@18000 ---
-Once upon a time tiut tho wo at bot ar end theis the bbet. ut xgeop. He so at asry i fitreet bapeve tatd te tar s hay nn he the soy,e the rit the. the as the band tho nere tod te the sas thigd tho he 
-[FLY20k] step 18200 loss 2.3362 mem 9.2GB [9986s]
-[FLY20k] step 18400 loss 2.6562 mem 9.2GB [10096s]
-[FLY20k] step 18600 loss 2.6262 mem 9.2GB [10205s]
-[FLY20k] step 18800 loss 2.3262 mem 9.2GB [10315s]
-[FLY20k] step 19000 loss 2.4889 mem 9.2GB [10425s]
-[FLY20k] step 19200 loss 2.5223 mem 9.2GB [10534s]
-[FLY20k] step 19400 loss 2.1547 mem 9.2GB [10644s]
-[FLY20k] step 19600 loss 2.7022 mem 9.2GB [10753s]
-[FLY20k] step 19800 loss 2.3788 mem 9.2GB [10863s]
-[FLY20k] step 19999 loss 2.5744 mem 9.2GB [10972s]
-
-=== FLY 20k final sample ===
-Once upon a time naked wheitg toe dind ind ilind bitid in te acne fit the thed int he whend tered wund the terind ger and he nre wo nteot ad und id fey he sit tho iken s have the carded to tup pite to tid the rougd he thig ifre the che tired thip the wo the yhke the wa dint'g tinvee wabe sad alid
-
-===== FINAL =====
-FLY-20k eval 2.3324 (8k: 2.6294, unigram 3.0802)
-ALL-DONE
+[FLY] corpus 60,000,000 vocab 107 unigram 3.0802
+computing word-start indices...
+word-start pool: 976,202
+[FLYS4] step     0 loss 5.9189 mem 9.2GB [1s]
+[FLYS4] step   200 loss 3.3474 mem 9.2GB [94s]
+[FLYS4] step   400 loss 3.1366 mem 9.2GB [188s]
+[FLYS4] step   600 loss 3.0670 mem 9.2GB [281s]
+[FLYS4] step   800 loss 3.5922 mem 9.2GB [374s]
+[FLYS4] step  1000 loss 2.9897 mem 9.2GB [467s]
+[FLYS4] step  1200 loss 3.3171 mem 9.2GB [560s]
+[FLYS4] step  1400 loss 3.2458 mem 9.2GB [653s]
+[FLYS4] step  1600 loss 2.9049 mem 9.2GB [746s]
+[FLYS4] step  1800 loss 3.7183 mem 9.2GB [840s]
+[FLYS4] step  2000 loss 2.9646 mem 9.2GB [933s]
+--- s4sample@2000 ---
+Once upon a time |s ifffssffnrr h  hlrr  hmriod rmmt r.rfhs nO
+bcmlsmfr fhmdt b vlememo vtli<mm,hrh  mfiiirmmfOirr
+i rffEfellm mvirf r fhoh  mmehlmmtv f spro fm rflO pfajl  sf fli<li   imt o hf 
+lhOm 
+[FLYS4] step  2200 loss 3.0776 mem 9.2GB [1028s]
+[FLYS4] step  2400 loss 3.0268 mem 9.2GB [1121s]
+[FLYS4] step  2600 loss 2.9889 mem 9.2GB [1214s]
+[FLYS4] step  2800 loss 3.2756 mem 9.2GB [1307s]
+[FLYS4] step  3000 loss 3.1239 mem 9.2GB [1400s]
+[FLYS4] step  3200 loss 2.7064 mem 9.2GB [1493s]
+[FLYS4] step  3400 loss 3.0579 mem 9.2GB [1586s]
+[FLYS4] step  3600 loss 2.6640 mem 9.2GB [1679s]

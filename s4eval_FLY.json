@@ -1,0 +1,1 @@
+{"s4_eval": 3.4440982856671325, "tag": "FLY", "ckpt": "s4_FLY_step4000.pt", "protocol": {"warm": 64, "evlen": 64, "B": 2, "nb": 40, "seed": 123, "align": "word-start"}}

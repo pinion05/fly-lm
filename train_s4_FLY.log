@@ -1,0 +1,155 @@
+[FLY] corpus 60,000,000 vocab 107 unigram 3.0802
+computing word-start indices...
+word-start pool: 976,202
+[FLYS4] step     0 loss 5.9189 mem 9.2GB [1s]
+[FLYS4] step   200 loss 3.3474 mem 9.2GB [94s]
+[FLYS4] step   400 loss 3.1366 mem 9.2GB [188s]
+[FLYS4] step   600 loss 3.0670 mem 9.2GB [281s]
+[FLYS4] step   800 loss 3.5922 mem 9.2GB [374s]
+[FLYS4] step  1000 loss 2.9897 mem 9.2GB [467s]
+[FLYS4] step  1200 loss 3.3171 mem 9.2GB [560s]
+[FLYS4] step  1400 loss 3.2458 mem 9.2GB [653s]
+[FLYS4] step  1600 loss 2.9049 mem 9.2GB [746s]
+[FLYS4] step  1800 loss 3.7183 mem 9.2GB [840s]
+[FLYS4] step  2000 loss 2.9646 mem 9.2GB [933s]
+--- s4sample@2000 ---
+Once upon a time |s ifffssffnrr h  hlrr  hmriod rmmt r.rfhs nO
+bcmlsmfr fhmdt b vlememo vtli<mm,hrh  mfiiirmmfOirr
+i rffEfellm mvirf r fhoh  mmehlmmtv f spro fm rflO pfajl  sf fli<li   imt o hf 
+lhOm 
+[FLYS4] step  2200 loss 3.0776 mem 9.2GB [1028s]
+[FLYS4] step  2400 loss 3.0268 mem 9.2GB [1121s]
+[FLYS4] step  2600 loss 2.9889 mem 9.2GB [1214s]
+[FLYS4] step  2800 loss 3.2756 mem 9.2GB [1307s]
+[FLYS4] step  3000 loss 3.1239 mem 9.2GB [1400s]
+[FLYS4] step  3200 loss 2.7064 mem 9.2GB [1493s]
+[FLYS4] step  3400 loss 3.0579 mem 9.2GB [1586s]
+[FLYS4] step  3600 loss 2.6640 mem 9.2GB [1679s]
+[FLYS4] step  3800 loss 3.0265 mem 9.2GB [1773s]
+[FLYS4] step  4000 loss 2.7422 mem 9.2GB [1866s]
+--- s4sample@4000 ---
+Once upon a time adme saaatmamegpoawo"eysseroe dhhoo mTeoawmTofeasopv.. nmele". oaotps bHodad heoaI .e taoeot"hdeuy "d!fheox. hmooteoh oovoWld oago l egr oo "hoehoo ho weoxeo gphoed o"hamro doeTom o a
+[FLYS4] step  4200 loss 2.6713 mem 9.2GB [1960s]
+[FLYS4] step  4400 loss 2.6557 mem 9.2GB [2054s]
+[FLYS4] step  4600 loss 2.7033 mem 9.2GB [2147s]
+[FLYS4] step  4800 loss 2.7093 mem 9.2GB [2240s]
+[FLYS4] step  5000 loss 2.6926 mem 9.2GB [2333s]
+[FLYS4] step  5200 loss 2.8493 mem 9.2GB [2426s]
+[FLYS4] step  5400 loss 2.6556 mem 9.2GB [2519s]
+[FLYS4] step  5600 loss 2.8493 mem 9.2GB [2612s]
+[FLYS4] step  5800 loss 2.6180 mem 9.2GB [2705s]
+[FLYS4] step  6000 loss 2.4464 mem 9.2GB [2798s]
+--- s4sample@6000 ---
+Once upon a time h hoo o“ihohieeiohihhhihToohhhehhohhooiooshhioeohhohhehioihooheowheohooihhhhoheahiehheiowooiheotoiToeewhhheooei
+hhheeetooiihhe.oohheoeeoiiohheeehjehoehehehhhheaohhpeohoshhohehohheheho
+[FLYS4] step  6200 loss 2.4587 mem 9.2GB [2893s]
+[FLYS4] step  6400 loss 2.6255 mem 9.2GB [2986s]
+[FLYS4] step  6600 loss 2.7746 mem 9.2GB [3080s]
+[FLYS4] step  6800 loss 2.9335 mem 9.2GB [3173s]
+[FLYS4] step  7000 loss 2.7268 mem 9.2GB [3266s]
+[FLYS4] step  7200 loss 2.3080 mem 9.2GB [3359s]
+[FLYS4] step  7400 loss 2.6862 mem 9.2GB [3452s]
+[FLYS4] step  7600 loss 2.6004 mem 9.2GB [3545s]
+[FLYS4] step  7800 loss 2.7710 mem 9.2GB [3638s]
+[FLYS4] step  8000 loss 2.5145 mem 9.2GB [3731s]
+--- s4sample@8000 ---
+Once upon a time |aohhhhhehawhhhhhhhohohwhhhhhehhhhhhhhohhhhhhhhhhahhhhhhhhhohohohhhhohhhhhehhhhhhoiawhhheehhhohhhowhoohhhahhhohhhhvhhhhhhowwwhhhhhoiohhohhaowhhhhhhahoohhohasohhhewhhhhhohhohhhhohhowhh
+[FLYS4] step  8200 loss 2.5912 mem 9.2GB [3826s]
+[FLYS4] step  8400 loss 2.6850 mem 9.2GB [3919s]
+[FLYS4] step  8600 loss 2.3306 mem 9.2GB [4012s]
+[FLYS4] step  8800 loss 2.4957 mem 9.2GB [4106s]
+[FLYS4] step  9000 loss 2.3545 mem 9.2GB [4199s]
+[FLYS4] step  9200 loss 2.3600 mem 9.2GB [4292s]
+[FLYS4] step  9400 loss 2.1032 mem 9.2GB [4385s]
+[FLYS4] step  9600 loss 2.3546 mem 9.2GB [4478s]
+[FLYS4] step  9800 loss 2.4660 mem 9.2GB [4571s]
+[FLYS4] step 10000 loss 2.6808 mem 9.2GB [4664s]
+--- s4sample@10000 ---
+Once upon a time e
+he|
+eh<hh||>
+<Thohlh>
+ohTh h
+
+eh hh  ..e,    e |h|e eeehaa e eeihe. ,eeee|eeeeeeeeeeeeeeeoeeeeeeaaeeeeehoeee.eeaieieeeeeae|eeeeeie.eeeeeiaeeeeee|eeeeeeeeeyeeeeeeaieeeeeeeeeeeee|o|ee
+[FLYS4] step 10200 loss 2.5796 mem 9.2GB [4759s]
+[FLYS4] step 10400 loss 2.7017 mem 9.2GB [4853s]
+[FLYS4] step 10600 loss 2.0734 mem 9.2GB [4946s]
+[FLYS4] step 10800 loss 2.2706 mem 9.2GB [5039s]
+[FLYS4] step 11000 loss 2.5648 mem 9.2GB [5132s]
+[FLYS4] step 11200 loss 2.2874 mem 9.2GB [5225s]
+[FLYS4] step 11400 loss 2.1789 mem 9.2GB [5318s]
+[FLYS4] step 11600 loss 2.0882 mem 9.2GB [5411s]
+[FLYS4] step 11800 loss 2.5956 mem 9.2GB [5505s]
+[FLYS4] step 12000 loss 2.2570 mem 9.2GB [5598s]
+--- s4sample@12000 ---
+Once upon a time 
+<<e>
+
+<h|>|||||||h|
+eee<oeieee.eeeee eehheee e|ee e ee ie e e eehhe e eeeeee, ee hee e eey ee eeepe  eeee  e e e,e   eeeeee  e  eeh e  e
+ee  e eeeo he e,ee  he  Zeeh e eee he ee aeeh
+[FLYS4] step 12200 loss 2.5216 mem 9.2GB [5692s]
+[FLYS4] step 12400 loss 2.4233 mem 9.2GB [5786s]
+[FLYS4] step 12600 loss 2.0358 mem 9.2GB [5879s]
+[FLYS4] step 12800 loss 2.3069 mem 9.2GB [5972s]
+[FLYS4] step 13000 loss 2.1136 mem 9.2GB [6065s]
+[FLYS4] step 13200 loss 2.1893 mem 9.2GB [6158s]
+[FLYS4] step 13400 loss 2.6786 mem 9.2GB [6251s]
+[FLYS4] step 13600 loss 2.0239 mem 9.2GB [6344s]
+[FLYS4] step 13800 loss 2.1367 mem 9.2GB [6438s]
+[FLYS4] step 14000 loss 2.4751 mem 9.2GB [6531s]
+--- s4sample@14000 ---
+Once upon a time pcie|hehehhe|ehooiaeeeeehhieheeoiheieehehheeeeeooaaeeeehiheeeeeoooeeeeeeiaaeeeeeeiaieeeeeaeeee|eeieeeeeeee||e||eeeieee|eeeaae|eeeeeeeeeeeeeyeee|eeeeeeee|ee||e|eeeoieeeeeeieoaeeeeeeeee
+[FLYS4] step 14200 loss 2.3504 mem 9.2GB [6626s]
+[FLYS4] step 14400 loss 2.6448 mem 9.2GB [6719s]
+[FLYS4] step 14600 loss 2.3354 mem 9.2GB [6814s]
+[FLYS4] step 14800 loss 2.5376 mem 9.2GB [6909s]
+[FLYS4] step 15000 loss 2.0780 mem 9.2GB [7002s]
+[FLYS4] step 15200 loss 2.5920 mem 9.2GB [7095s]
+[FLYS4] step 15400 loss 2.1704 mem 9.2GB [7188s]
+[FLYS4] step 15600 loss 2.2167 mem 9.2GB [7281s]
+[FLYS4] step 15800 loss 2.0372 mem 9.2GB [7374s]
+[FLYS4] step 16000 loss 2.4337 mem 9.2GB [7467s]
+--- s4sample@16000 ---
+Once upon a time egeeeeeeeyeeeeeee oeeeeee oreeee alo hh|e||oo|eeeeeeeeeeee heeeyaaeee|eiiiyeeeeeiaeoeeeeaieeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeyeeeeeeeeeeeeeeaeeeee
+[FLYS4] step 16200 loss 2.2973 mem 9.2GB [7562s]
+[FLYS4] step 16400 loss 2.8720 mem 9.2GB [7655s]
+[FLYS4] step 16600 loss 2.1542 mem 9.2GB [7748s]
+[FLYS4] step 16800 loss 2.2276 mem 9.2GB [7855s]
+[FLYS4] step 17000 loss 2.5485 mem 9.2GB [7948s]
+[FLYS4] step 17200 loss 2.3563 mem 9.2GB [8041s]
+[FLYS4] step 17400 loss 2.1133 mem 9.2GB [8135s]
+[FLYS4] step 17600 loss 2.4356 mem 9.2GB [8228s]
+[FLYS4] step 17800 loss 2.5691 mem 9.2GB [8321s]
+[FLYS4] step 18000 loss 2.3373 mem 9.2GB [8414s]
+--- s4sample@18000 ---
+Once upon a time pee
+eeeee >||
+e|h||||||||  
+
+>
+||
+
+
+
+>
+|>
+" heeeoe. |eeee >||eeee.  |eeeee e |eeee eeeeeeeeeee>>||e>eeeeeeeeeeee||eeeeee||eeee>||||eeeee|||e|||||||||||||||ee||||||e ||||||e >|||||e ||
+[FLYS4] step 18200 loss 2.4692 mem 9.2GB [8508s]
+[FLYS4] step 18400 loss 2.1527 mem 9.2GB [8602s]
+[FLYS4] step 18600 loss 2.4250 mem 9.2GB [8695s]
+[FLYS4] step 18800 loss 2.1487 mem 9.2GB [8788s]
+[FLYS4] step 19000 loss 2.2679 mem 9.2GB [8881s]
+[FLYS4] step 19200 loss 2.2877 mem 9.2GB [8974s]
+[FLYS4] step 19400 loss 2.1739 mem 9.2GB [9067s]
+[FLYS4] step 19600 loss 2.1832 mem 9.2GB [9160s]
+[FLYS4] step 19800 loss 2.3097 mem 9.2GB [9254s]
+[FLYS4] step 19999 loss 2.3276 mem 9.2GB [9346s]
+
+===== FINAL [FLY] =====
+S4 eval 0.0000 (20k기준 FLY 2.332 / MASLOV 2.569 / unigram 3.0802)
+
+=== final sample ===
+Once upon a time ddeeeeepcee.e.eeeeeeeeeeeee.>>|>>|ee>eeeeee,ee eeee. eeeeee,, eeeeeeeeeeeeeeeeeeeee>eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeieeeeeeeeeeeeeee|eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeiee>eeeieeeeeeiaeeeeeeeeeeeeeeeieee>eeeeeeeeeeeeeeeeeieeeeeeeeee|eeepeiia|eeeeeaa|ee
+ALL-DONE

@@ -1,0 +1,135 @@
+[MASLOV] corpus 60,000,000 vocab 107 unigram 3.0802
+computing word-start indices...
+word-start pool: 976,202
+[MASLOVS4] step     0 loss 6.1518 mem 9.6GB [1s]
+[MASLOVS4] step   200 loss 4.4020 mem 9.7GB [90s]
+[MASLOVS4] step   400 loss 3.1507 mem 9.7GB [179s]
+[MASLOVS4] step   600 loss 3.2439 mem 9.7GB [267s]
+[MASLOVS4] step   800 loss 3.6268 mem 9.7GB [356s]
+[MASLOVS4] step  1000 loss 2.9710 mem 9.7GB [444s]
+[MASLOVS4] step  1200 loss 3.3003 mem 9.7GB [533s]
+[MASLOVS4] step  1400 loss 3.3723 mem 9.7GB [622s]
+[MASLOVS4] step  1600 loss 2.8936 mem 9.7GB [710s]
+[MASLOVS4] step  1800 loss 3.7836 mem 9.7GB [799s]
+[MASLOVS4] step  2000 loss 2.8727 mem 9.7GB [887s]
+--- s4sample@2000 ---
+Once upon a time ts it ws n n r y  h e   adrion ra t r. h s nO
+ c as ar Oadnt    see aopct i kwaSrh  e itiseaoOirr
+i rwa pplsasusino a a ah  nneh awtp a spro so wfts paaen  sbooai liS  i t a ao aooOm 
+[MASLOVS4] step  2200 loss 3.2284 mem 9.7GB [978s]
+[MASLOVS4] step  2400 loss 3.0226 mem 9.7GB [1066s]
+[MASLOVS4] step  2600 loss 3.0974 mem 9.7GB [1155s]
+[MASLOVS4] step  2800 loss 3.2394 mem 9.7GB [1243s]
+[MASLOVS4] step  3000 loss 3.2022 mem 9.7GB [1332s]
+[MASLOVS4] step  3200 loss 2.8586 mem 9.7GB [1420s]
+[MASLOVS4] step  3400 loss 3.2983 mem 9.7GB [1509s]
+[MASLOVS4] step  3600 loss 2.8754 mem 9.7GB [1597s]
+[MASLOVS4] step  3800 loss 3.2071 mem 9.7GB [1686s]
+[MASLOVS4] step  4000 loss 2.8202 mem 9.7GB [1775s]
+--- s4sample@4000 ---
+Once upon a time  hkt sledtma e po. otl  ftroe Mo’ Mnl tkl e cfeat tti.nnn lexn ynnt,s b,,dad hete  .eaen eote“deuy  anbhe iib ,dlndo a odo ndwdn nnl egk nn n, eh o htn eo eo  ihtedton  'rlldn  k’u e 
+[MASLOVS4] step  4200 loss 2.9147 mem 9.7GB [1865s]
+[MASLOVS4] step  4400 loss 2.7829 mem 9.7GB [1953s]
+[MASLOVS4] step  4600 loss 2.9150 mem 9.7GB [2042s]
+[MASLOVS4] step  4800 loss 2.9651 mem 9.7GB [2130s]
+[MASLOVS4] step  5000 loss 2.9955 mem 9.7GB [2219s]
+[MASLOVS4] step  5200 loss 2.9491 mem 9.7GB [2308s]
+[MASLOVS4] step  5400 loss 2.7447 mem 9.7GB [2396s]
+[MASLOVS4] step  5600 loss 3.0935 mem 9.7GB [2485s]
+[MASLOVS4] step  5800 loss 2.8933 mem 9.7GB [2574s]
+[MASLOVS4] step  6000 loss 2.7946 mem 9.7GB [2662s]
+--- s4sample@6000 ---
+Once upon a time   aootk  lod i n tthne cu ntnlend tio in satip  un tfef ukrn reowrbr o iebttn  a ien bit on ufnt ielce e ne o o
+ho ae too th e.neu toee tefrr et petoe e e tate oetpe hlsraotl ontl, to
+[MASLOVS4] step  6200 loss 2.7963 mem 9.7GB [2752s]
+[MASLOVS4] step  6400 loss 3.0580 mem 9.7GB [2841s]
+[MASLOVS4] step  6600 loss 2.9724 mem 9.7GB [2930s]
+[MASLOVS4] step  6800 loss 3.3315 mem 9.7GB [3018s]
+[MASLOVS4] step  7000 loss 2.9801 mem 9.7GB [3107s]
+[MASLOVS4] step  7200 loss 2.7407 mem 9.7GB [3196s]
+[MASLOVS4] step  7400 loss 2.8351 mem 9.7GB [3284s]
+[MASLOVS4] step  7600 loss 2.7654 mem 9.7GB [3373s]
+[MASLOVS4] step  7800 loss 3.1246 mem 9.7GB [3462s]
+[MASLOVS4] step  8000 loss 2.8032 mem 9.7GB [3550s]
+--- s4sample@8000 ---
+Once upon a time ea hritdr rteetkn mp|tsway e e ih . nhw,rhe ann nae edel e, ang a e ra a re, we. ai en hee edn he wa. Bi a ito he
+vn. kinnlwwed seti ersan tt aa wea wa soe t|rmhew rae et.t ee. thee e
+[MASLOVS4] step  8200 loss 2.9298 mem 9.7GB [3641s]
+[MASLOVS4] step  8400 loss 2.8618 mem 9.7GB [3729s]
+[MASLOVS4] step  8600 loss 2.5881 mem 9.7GB [3818s]
+[MASLOVS4] step  8800 loss 2.7192 mem 9.7GB [3906s]
+[MASLOVS4] step  9000 loss 2.7088 mem 9.7GB [3995s]
+[MASLOVS4] step  9200 loss 2.6942 mem 9.7GB [4083s]
+[MASLOVS4] step  9400 loss 2.5210 mem 9.7GB [4172s]
+[MASLOVS4] step  9600 loss 2.7240 mem 9.7GB [4261s]
+[MASLOVS4] step  9800 loss 2.7773 mem 9.7GB [4349s]
+[MASLOVS4] step 10000 loss 2.9724 mem 9.7GB [4438s]
+--- s4sample@10000 ---
+Once upon a time etrri rttta tte.m aye ta atz tthil et ap e le ae la a  aw aa edy iseug, shet phmo eete. ity taa pxaat lhvho sthi. wu iu ly elf ew phhd. twinns if aet say eeyd iy tai ey oy ha fam dtam
+[MASLOVS4] step 10200 loss 3.3287 mem 9.7GB [4528s]
+[MASLOVS4] step 10400 loss 2.9834 mem 9.7GB [4617s]
+[MASLOVS4] step 10600 loss 2.5883 mem 9.7GB [4706s]
+[MASLOVS4] step 10800 loss 3.0681 mem 9.7GB [4794s]
+[MASLOVS4] step 11000 loss 2.9340 mem 9.7GB [4883s]
+[MASLOVS4] step 11200 loss 2.6160 mem 9.7GB [4972s]
+[MASLOVS4] step 11400 loss 2.5065 mem 9.7GB [5060s]
+[MASLOVS4] step 11600 loss 2.5899 mem 9.7GB [5149s]
+[MASLOVS4] step 11800 loss 2.9644 mem 9.7GB [5238s]
+[MASLOVS4] step 12000 loss 2.6925 mem 9.7GB [5326s]
+--- s4sample@12000 ---
+Once upon a time arted te megtsd ee atwee tai tsi i he dirdd wthTey e ia isi dpetphhi ideTlien,d twwbtit bett e" wopttte> e wian wtTa  irtsud id i ettedt thel id ti thi wcfad lfLmod tied id hloen ae h
+[MASLOVS4] step 12200 loss 2.9060 mem 9.7GB [5416s]
+[MASLOVS4] step 12400 loss 2.6021 mem 9.7GB [5505s]
+[MASLOVS4] step 12600 loss 2.2369 mem 9.7GB [5594s]
+[MASLOVS4] step 12800 loss 2.7648 mem 9.7GB [5682s]
+[MASLOVS4] step 13000 loss 2.4784 mem 9.7GB [5771s]
+[MASLOVS4] step 13200 loss 3.0070 mem 9.7GB [5860s]
+[MASLOVS4] step 13400 loss 2.7849 mem 9.7GB [5948s]
+[MASLOVS4] step 13600 loss 2.4680 mem 9.7GB [6037s]
+[MASLOVS4] step 13800 loss 2.4382 mem 9.7GB [6126s]
+[MASLOVS4] step 14000 loss 2.8124 mem 9.7GB [6214s]
+--- s4sample@14000 ---
+Once upon a time hteep the id e od ad hwhh  aplt lherw htpew ovhos fee mhien ar. fwen kewsted hh erdiud teur ttoes hee mou soed ou sseu ide teed tche ta tacy ues thed he roopd he on ther outg epret aa
+[MASLOVS4] step 14200 loss 2.7573 mem 9.7GB [6304s]
+[MASLOVS4] step 14400 loss 2.8912 mem 9.7GB [6393s]
+[MASLOVS4] step 14600 loss 3.0521 mem 9.7GB [6482s]
+[MASLOVS4] step 14800 loss 2.5932 mem 9.7GB [6570s]
+[MASLOVS4] step 15000 loss 2.5143 mem 9.7GB [6659s]
+[MASLOVS4] step 15200 loss 2.8243 mem 9.7GB [6747s]
+[MASLOVS4] step 15400 loss 2.3617 mem 9.7GB [6836s]
+[MASLOVS4] step 15600 loss 2.5872 mem 9.7GB [6924s]
+[MASLOVS4] step 15800 loss 2.4398 mem 9.7GB [7013s]
+[MASLOVS4] step 16000 loss 2.6555 mem 9.7GB [7101s]
+--- s4sample@16000 ---
+Once upon a time wor a wely roetta seenge soy aln adcshe sey oko letne wawt'd toy qelrymigcy in tiles ne agn tra egnen tad o bace siered waid selecta anl red uge tata. to saldyr egthe mao ma ald sor h
+[MASLOVS4] step 16200 loss 2.5278 mem 9.7GB [7191s]
+[MASLOVS4] step 16400 loss 3.0687 mem 9.7GB [7280s]
+[MASLOVS4] step 16600 loss 2.5470 mem 9.7GB [7369s]
+[MASLOVS4] step 16800 loss 3.0198 mem 9.7GB [7457s]
+[MASLOVS4] step 17000 loss 2.8808 mem 9.7GB [7546s]
+[MASLOVS4] step 17200 loss 2.4932 mem 9.7GB [7634s]
+[MASLOVS4] step 17400 loss 2.3625 mem 9.7GB [7723s]
+[MASLOVS4] step 17600 loss 2.4709 mem 9.7GB [7811s]
+[MASLOVS4] step 17800 loss 2.6277 mem 9.7GB [7900s]
+[MASLOVS4] step 18000 loss 2.7172 mem 9.7GB [7988s]
+--- s4sample@18000 ---
+Once upon a time tir
+in yt ony e onllade. coteid to. i ntotud xnenp.d ot H nodnery i fiunne gbapm. ontid te onre lhop nnlhe tpe any,e wuter and mel phey girle In ap wheed woud tey binn wit igd, hhe wo
+[MASLOVS4] step 18200 loss 2.7306 mem 9.7GB [8078s]
+[MASLOVS4] step 18400 loss 2.4167 mem 9.7GB [8167s]
+[MASLOVS4] step 18600 loss 2.6752 mem 9.7GB [8256s]
+[MASLOVS4] step 18800 loss 2.8804 mem 9.7GB [8344s]
+[MASLOVS4] step 19000 loss 2.5151 mem 9.7GB [8433s]
+[MASLOVS4] step 19200 loss 2.5264 mem 9.7GB [8521s]
+[MASLOVS4] step 19400 loss 2.3856 mem 9.7GB [8610s]
+[MASLOVS4] step 19600 loss 2.3786 mem 9.7GB [8698s]
+[MASLOVS4] step 19800 loss 2.6829 mem 9.7GB [8787s]
+[MASLOVS4] step 19999 loss 2.3658 mem 9.7GB [8875s]
+
+===== FINAL [MASLOV] =====
+S4 eval 0.0000 (20k기준 FLY 2.332 / MASLOV 2.569 / unigram 3.0802)
+
+=== final sample ===
+Once upon a time nrafd whiit Thoe dh hhiad ilin lbitid ir hered fhoris tere tse aryek when rigre"g.t> et"e
+tete Tager herer mhe mar nonot ar un tid fanm hsef lolod thei. have nhrek rih ang hup piak to tid hF irok ins hogig<ifre ndeinr, tired thi' rlhed on fankn He tiwr 'nrrreeds voe inbh shoad th
+ALL-DONE
