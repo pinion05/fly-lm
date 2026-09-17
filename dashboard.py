@@ -8,7 +8,7 @@ STATE = json.load(open(os.path.join(HOME, "fly-lm", ".dash_state.json")))
 CACHE = {"t": 0, "data": None, "hist": []}  # hist: (ts, fly_loss, msl_loss)
 LOCK = threading.Lock()
 
-STEP_RE = re.compile(r"\[(FLYS4|MASLOVS4|FLY20k|MASLOV20k|FLY|RANDOM|MASLOV)\] step\s+(\d+) loss ([0-9.]+)")
+STEP_RE = re.compile(r"\[(FLYS5|MASLOVS5|FLYS4|MASLOVS4|FLY20k|MASLOV20k|FLY|RANDOM|MASLOV)\] step\s+(\d+) loss ([0-9.]+)")
 
 def ssh_tail(host, port, logfile):
     cmd = ["ssh", "-o", "StrictHostKeyChecking=no", "-o", "ConnectTimeout=8",
@@ -25,9 +25,9 @@ def poll_loop():
     while True:
         out = {}
         for name, ep in STATE.items():
-            logname = "train_s4_FLY.log" if name == "fly" else "train_s4_MASLOV.log"
+            logname = "train_s5_FLY.log" if name == "fly" else "train_s5_MASLOV.log"
             txt = ssh_tail(ep["host"], ep["port"], logname)
-            pts = [(int(m[1]), float(m[2])) for m in STEP_RE.findall(txt) if m[0].endswith("S4")]
+            pts = [(int(m[1]), float(m[2])) for m in STEP_RE.findall(txt) if m[0].endswith(("S4","S5"))]
             last_sample = ""
             if "--- s4sample@" in txt:
                 seg = txt.split("--- s4sample@")[-1].split("\n", 1)
