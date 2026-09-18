@@ -22,7 +22,7 @@ def run(cmd, timeout=90, **kw):
     return subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, **kw)
 
 
-def search_offers(min_ram_gb, exclude):
+def search_offers(min_ram_gb, exclude, blacklist_substrings=("5070", "5080", "5090", "5060")):
     r = run(["vastai", "search", "offers",
              f"num_gpus=1 gpu_ram>={min_ram_gb} reliability>0.98",
              "--raw"], timeout=120)
@@ -30,7 +30,8 @@ def search_offers(min_ram_gb, exclude):
     offers = d if isinstance(d, list) else d.get("offers", d)
     ok = [o for o in offers
           if o.get("dph_total", 0) > 0 and not o.get("is_bid", False)
-          and o.get("duration", 0) >= 86400 and o["id"] not in exclude]
+          and o.get("duration", 0) >= 86400 and o["id"] not in exclude
+          and not any(s in (o.get("gpu_name") or "") for s in blacklist_substrings)]
     ok.sort(key=lambda x: x.get("dlperf", 0) / x["dph_total"], reverse=True)
     return ok[:8]
 
@@ -88,6 +89,23 @@ def try_instance(offer, launcher, files, wait_min):
         run(["vastai", "destroy", "instance", str(contract), "-y"], timeout=60)
         return None
 
+    # egress 사전검사: pytorch.org 첫 5MB 속도가 3MB/s 미만이면 pip이 멈추는 호스트
+    r = run(["ssh", *SSH_BASE, "-p", port, f"root@{host}",
+             "curl -s -o /dev/null -w '%{http_code} %{speed_download}' -r 0-5242880 --max-time 15 "
+             "'https://download.pytorch.org/whl/cu128/torch/'"],
+            timeout=40)
+    parts = (r.stdout.strip() or "0 0").split()
+    code = parts[0] if parts else "0"
+    try:
+        speed = float(parts[1]) if len(parts) > 1 else 0.0
+    except ValueError:
+        speed = 0.0
+    if code in ("200", "206") and speed < 3_000_000:
+        print(f"[{o_id}] egress slow ({speed/1e6:.1f} MB/s to pytorch.org) — destroy & next")
+        run(["vastai", "destroy", "instance", str(contract), "-y"], timeout=60)
+        return None
+    print(f"[{o_id}] egress check http={code} speed={speed/1e6:.1f} MB/s")
+
     # 업로드 + 런치
     run(["scp", *SSH_BASE, "-P", port, launcher, f"root@{host}:/root/launcher.sh"], timeout=300)
     run(["ssh", *SSH_BASE, "-p", port, f"root@{host}", "mkdir -p /root/work"], timeout=30)
@@ -101,10 +119,32 @@ def try_instance(offer, launcher, files, wait_min):
         print(f"[{o_id}] uploaded {Path(f).name}")
     r = run(["ssh", *SSH_BASE, "-p", port, f"root@{host}",
              "nohup bash /root/launcher.sh > /root/launch.log 2>&1 & sleep 2; echo LAUNCHED"], timeout=60)
-    if "LAUNCHED" in r.stdout:
-        print(f"[{o_id}] LAUNCHED — instance {contract} ({host}:{port})")
-        return {"id": contract, "host": host, "port": port, "offer": o_id}
-    print(f"[{o_id}] launch cmd failed: {r.stderr[:100]}")
+    if "LAUNCHED" not in r.stdout:
+        print(f"[{o_id}] launch cmd failed: {r.stderr[:100]}")
+        run(["vastai", "destroy", "instance", str(contract), "-y"], timeout=60)
+        return None
+    # 사후 검증: nvidia-smi GPU 인식 + 5분 내 학습 프로세스/로그 시작 확인
+    r = run(["ssh", *SSH_BASE, "-p", port, f"root@{host}",
+             "nvidia-smi --query-gpu=name --format=csv,noheader 2>&1 | head -1"], timeout=30)
+    print(f"[{o_id}] nvidia-smi: {r.stdout.strip()[:60]}")
+    if "NVIDIA" not in r.stdout:
+        print(f"[{o_id}] GPU not visible — destroy & next")
+        run(["vastai", "destroy", "instance", str(contract), "-y"], timeout=60)
+        return None
+    for i in range(30):
+        time.sleep(60)
+        r = run(["ssh", *SSH_BASE, "-p", port, f"root@{host}",
+                 "tail -2 /root/launch.log 2>/dev/null; ls /root/work/*.log 2>/dev/null | head -2"], timeout=30)
+        tail = r.stdout.strip()
+        if "SETUP-FAIL" in tail:
+            print(f"[{o_id}] SETUP-FAIL in launch.log — destroy & next")
+            run(["vastai", "destroy", "instance", str(contract), "-y"], timeout=60)
+            return None
+        if "SETUP-DONE" in tail or (tail and ".log" in tail and "SETUP" not in tail):
+            print(f"[{o_id}] LAUNCHED — instance {contract} ({host}:{port})")
+            return {"id": contract, "host": host, "port": port, "offer": o_id}
+        print(f"[{o_id}] waiting setup... {tail[-80:]}")
+    print(f"[{o_id}] setup never finished — destroy & next")
     run(["vastai", "destroy", "instance", str(contract), "-y"], timeout=60)
     return None
 
