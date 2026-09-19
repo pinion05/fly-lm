@@ -137,3 +137,23 @@ python maslov_rewire.py  # → malecns_maslov.npz (차수보존 대조)
 - [ ] SimpleStories 데이터 축 추가
 - [ ] 파리뇌 계층 래핑 (Stage 3)
 - [ ] arXiv 프리핀트 → ICLR 2027 워크숍 (Re-Align 계열)
+
+
+## Final results — 5-way rewiring × 3 seeds (fair eval, seed 123)
+
+| Wiring | seeds | mean±std | what's preserved |
+|---|---|---|---|
+| **WSHUF** | 2.074 / 2.119 / 2.054 | **2.082 ± 0.033** | topology only (weights shuffled) |
+| **MWS** | 2.182 / 2.165 / 2.088 | **2.145 ± 0.050** | per-node weight allocation only |
+| FLY | 2.332 / 2.244 / 2.099 | 2.225 ± 0.118 | everything (original) |
+| MASLOV | 2.569 / 2.497 / 2.584 | 2.550 ± 0.047 | degree distribution only |
+| RANDOM | 3.112 / 2.793 / 2.545 | 2.816 ± 0.284 | nothing (σ = highest!) |
+| unigram | — | 3.080 | baseline |
+
+**Core findings:**
+1. **OR-recovery / AND-collapse**: topology and weight-allocation are *independent sufficient conditions* — destroying either one alone leaves learnability intact (WSHUF/MWS ≈ 2.08–2.15); destroying both (MASLOV 2.550) is the only way to break it.
+2. **The original is 3rd of 5** — the biological weight layout acts as an *optimization burden* at this budget (WSHUF beats FLY, t=-2.02). "Good wiring" ≠ "easy wiring".
+3. **Structure buys reliability, not just mean performance**: RANDOM has the highest seed variance (σ=0.284) — structureless wiring gambles on initialization.
+4. **State-level exposure bias** (S4): only the real connectome collapses under stateful BPTT — a shortcut conditioned on hidden-state trajectory statistics (cold CE 5.7–6.6, 'e' 97%).
+5. Degree-preserving Maslov nulls confound topology with weight-hub correlation — a methodological correction for connectome-ML studies.
+
