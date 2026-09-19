@@ -4,142 +4,10 @@
 
 > 한 마디로: 초파리 수컷 전체 중추신경계(MaleCNS v1.0)의 실제 배선을
 > 고정된 순환신경망 구조로 쓰고, TinyStories로 다음 글자 예측만 학습시켰다.
-> 실제 배선은 언어 통계를 배우고, 같은 조건의 무작위 배선은 배우지 못한다.
+> 결과는 반전이었다 — 배선도를 섞어도, 시냅스 굵기를 섞어도 잘 배웠다.
+> **둘 다 섞어야만 망했다.**
 
-## 핵심 결과
-
-**8,000 스텝 (동일 배치 40개 공정평가, seed 123):**
-
-| 배선 | eval loss (nats/char) | PPL | unigram(3.080) 대비 |
-|---|---|---|---|
-| **실제 파리 배선 (MaleCNS)** | **2.629** | 13.9 | -0.45 |
-| 차수보존 재배선 (Maslov–Sneppen) | 2.952 | 19.1 | -0.13 |
-| 완전 무작위 배선 | 3.112 | 22.4 | +0.03 (unigram에 갇힘) |
-
-**20,000 스텝 (학습 2.5배, 같은 공정평가) — 격차 유지:**
-
-| 배선 | 8k | 20k | 개선 |
-|---|---|---|---|
-| **FLY (파리 배선)** | 2.629 | **2.332** (PPL 10.3) | -0.30 |
-| MASLOV (차수보존) | 2.952 | **2.569** (PPL 13.2) | -0.38 |
-
-→ MASLOV가 늦게 따라잡는 시나리오 기각: **격차 0.24는 학습량과 무관한 구조 효과**
-
-![3-way training curves](assets/training_curves.png)
-
-*차트는 세 배선(실제 파리/차수보존 재배선/무작위)의 8,000스텝 학습 곡선 — 회색 점선이 unigram 기준선. 20k 곡선·실시간 추적 대시보드(테일넷 전용)는 `dashboard.py`, `train_20k.log` 참고.*
-
-## 세 가지 발견
-
-1. **전체 CNS 211k 뉴런을 gradient(BPTT)로 학습** — 문헌상 최대 규모 (선행 최대 45.7k, Shiu 2024는 학습 없는 시뮬레이션)
-2. **무작위 배선은 학습 자체가 성립 안 함** — 8k 스텝 내내 unigram(3.08) 근처 정체, 연결 수·세기 분포·E/I 비율·파라미터 수가 같아도
-3. **허브 가설 기각** — 차수보존 null(허브 100% 유지, 연결 패턴만 교차)도 실배선에 못 미침 + 20k에서도 격차 유지 → 학습 가능성의 대부분은 "어떤 뉴런이 어떤 뉴런에 연결되는가"라는 경로 패턴에서 나옴
-
-## 실험 설정
-
-- **커넥톤**: MaleCNS v1.0 (brain + nerve cord, 수컷 성충 전체 CNS)
-  - 그래프: 뉴런 211,577 / 연결 10,653,945 (weight≥3 컷) / 시냅스 합 1.25억
-  - E/I 부호: 뉴런별 신경전달물질 예측(GABA→억제) 실측 매핑
-  - 셀타입 11,752종 → 관측 타입쌍 α ~152만 파라미터 (flyvis weight-sharing의 확장)
-  - 허브 구조: 상위 1% 뉴런이 전체 연결의 12.8% 수신 (최다 허브 9,193 시냅스)
-- **과제**: TinyStories 60M chars, char-level next-token (vocab 107)
-- **학습**: Adam lr 1e-3, B=2, truncated BPTT (warm 32 + train 32), 단일 임대 GPU
-- **3-way 대조**: 실배선 vs Maslov–Sneppen 차수보존 재배선 vs 독립 셔플 무작위
-  (엣지 수·세기 분포·E/I 비율·파라미터 수·학습 설정 전부 동일)
-
-## 스테이지 히스토리
-
-| Stage | 내용 | 결과 |
-|---|---|---|
-| 0 | 유충 2,952뉴런 스모크 (CPU) | 파이프라인 검증, unigram 승 |
-| 0' | flyvis visual 45,669뉴런 | loss 3.10 — 시각회로는 언어에 부적합 확인 |
-| 1 | flyvis 45,669 + 무작위 대조 | 무작위 2.88 < 파리 3.09 — 시각 커넥톤에선 역전 (관찰) |
-| 2 | **MaleCNS 전체 + 무작위 대조** | **파리 2.629 ≫ 무작위 3.112** |
-| 2.5 | **Maslov–Sneppen 차수보존 대조 8k** | 파리 2.629 > 차수보존 2.952 — 허브 가설 기각 |
-| 2.6 | **20k 장기 학습 (FLY vs MASLOV 병렬)** | 파리 2.332 > 2.569 — 격차 0.24, 학습량 무관 구조 효과 |
-
-## 20k 스텝 샘플 (파리 배선이 쓴 글)
-
-```
-Once upon a time naked wheitg toe dind ind ilind bitid in te acne fit the
-thed int he whend tered wund the terind ger and he nre wo nteot ad und id
-fey he sit tho iken s have the carded to tup pite to tid the rougd...
-```
-
-관사·짧은 실단어("the", "and", "he", "have") 밀도가 8k 대비 눈에 띄게 증가.
-`fly20k_results.json`의 `snapshots`에 2k→20k 스텝별 문장 진화 타임랩스 포함.
-
-## 저장소 구성
-
-```
-connectome_data.py   유충 커넥톤 로더 (Winding 2023 S1)
-flyvis_loader.py     flyvis 내장 visual 커넥톤 로더
-prep_malecns.py      MaleCNS feather → 학습용 npz 전처리
-celltype_model.py    셀타입 쌍별 α 모델 (flyvis 방식 확장)
-maslov_rewire.py     Maslov–Sneppen 차수보존 재배선 + 검증
-vast_hunt.py         Vast.ai 인스턴스 자동 헌팅 (SSH 프록시 장애 대응)
-dashboard.py         실시간 다중 인스턴스 학습 대시보드 (테일넷 전용)
-stage{1,2}_results.json / maslov_results.json    8k 3-way 최종 수치
-fly20k_results.json / maslov20k_results.json     20k 최종 수치+스냅샷
-train_20k.log / train_maslov20k.log              20k 전체 학습 로그
-stage3_design.py     (예정) 파리뇌 계층 래핑 설계
-```
-
-## 재현
-
-```bash
-python3 -m venv .venv && source .venv/bin/activate
-pip install torch numpy pandas pyarrow matplotlib
-# 커넥톤: MaleCNS v1.0 공개 덤프 (CC BY 4.0)
-#   https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/connectome-weights-male-cns-v1.0-minconf-0.5.feather
-#   body-annotations, body-neurotransmitters 동일 경로
-# 데이터: https://huggingface.co/datasets/roneneldan/TinyStories
-python prep_malecns.py   # → malecns_graph.npz
-python maslov_rewire.py  # → malecns_maslov.npz (차수보존 대조)
-# 학습: vast_stage2.sh / train_20k 참조 (B2/TBPTT32, 8k 또는 20k steps)
-```
-
-하드웨어: 16GB GPU 한 장이면 충분 (~9.3GB 사용).
-전체 프로젝트 GPU 비용: **$5 미만** (3-way 8k + 20k 병렬 + 스모크 전부 포함).
-
-## 학계 위치 (요약)
-
-- "생물 배선 > 무작위" 자체는 정설 — Suárez 2021 (Nat. Mach. Intell., 인간 macro),
-  Shiu 2024 (Nature, 시뮬레이션), Drosophila Connectome Reservoir 2025 (Biomimetics, 같은 MaleCNS+ESN readout-only)
-- 본 저장소의 신규 기여: (1) 전체 CNS 규모 gradient 학습, (2) 언어 과제로의 확장,
-  (3) 무작위 대조의 실패가 unigram 정체라는 정량 서술, (4) 차수보존 null로 허브 가설 기각,
-  (5) **학습량 2.5배에서도 격차 유지 — 구조 효과의 영구성**
-- 상세 문헌 조사: `LITERATURE.md` (1차 소스 검증 포함)
-
-## 라이선스·데이터
-
-- 코드: MIT
-- MaleCNS v1.0: CC BY 4.0 (Janelia, male-cns.janelia.org)
-- TinyStories: CC BY 4.0 (Microsoft)
-- 유충 커넥톤 (Winding 2023): CC BY 4.0
-- flyvis (TuragaLab): MIT
-
-## 한계 (정직하게)
-
-- 시드 1개 — 다중 시드 반복은 예정
-- 단일 언어·단일 과제 — 언어 특화가 아닌 일반 순서 구조 이점일 가능성
-- spectral radius 등 동역학 분석 미포함 (Suárez 2021의 임계동역학 조건과의 비교 필요)
-- 학습량은 TinyStories 논문 기준(100B+ 토큰)의 0.3% — 샘플 효율 관점 해석 필요
-- 생물학적 해석 아님: "파리 뇌가 언어를 이해한다"가 아니라 "커넥톤 위상이 시퀀스 학습에 구조적 이점"이 본 주장
-
-## 로드맵
-
-- [x] 3-way 대조 8k (실배선/차수보존/무작위)
-- [x] 20k 장기 학습 — 격차 영구성 확인
-- [ ] 시드 3개 반복 (±$15)
-- [ ] spectral radius·활동 분산 분석
-- [ ] word-level 500단어 제한 코퍼스 (문장 구조 학습 도전)
-- [ ] SimpleStories 데이터 축 추가
-- [ ] 파리뇌 계층 래핑 (Stage 3)
-- [ ] arXiv 프리핀트 → ICLR 2027 워크숍 (Re-Align 계열)
-
-
-## Final results — 5-way rewiring × 3 seeds (fair eval, seed 123)
+## Final results — 5-way rewiring × 3 seeds (fair eval seed 123, nats/char)
 
 | Wiring | seeds | mean±std | what's preserved |
 |---|---|---|---|
@@ -150,10 +18,120 @@ python maslov_rewire.py  # → malecns_maslov.npz (차수보존 대조)
 | RANDOM | 3.112 / 2.793 / 2.545 | 2.816 ± 0.284 | nothing (σ = highest!) |
 | unigram | — | 3.080 | baseline |
 
-**Core findings:**
-1. **OR-recovery / AND-collapse**: topology and weight-allocation are *independent sufficient conditions* — destroying either one alone leaves learnability intact (WSHUF/MWS ≈ 2.08–2.15); destroying both (MASLOV 2.550) is the only way to break it.
-2. **The original is 3rd of 5** — the biological weight layout acts as an *optimization burden* at this budget (WSHUF beats FLY, t=-2.02). "Good wiring" ≠ "easy wiring".
-3. **Structure buys reliability, not just mean performance**: RANDOM has the highest seed variance (σ=0.284) — structureless wiring gambles on initialization.
-4. **State-level exposure bias** (S4): only the real connectome collapses under stateful BPTT — a shortcut conditioned on hidden-state trajectory statistics (cold CE 5.7–6.6, 'e' 97%).
-5. Degree-preserving Maslov nulls confound topology with weight-hub correlation — a methodological correction for connectome-ML studies.
+![5-way training curves](assets/training_curves.png)
 
+*5개 배선 × 3시드 학습곡선 — 얇은 선=개별 시드, 굵은 선=이동평균. WSHUF(초록) 전 구간 최하단, RANDOM(보라)이 시드별로 부채꼴.*
+
+## Core findings
+
+1. **OR-recovery / AND-collapse**: topology and weight-allocation are *independent sufficient conditions* — destroying either one alone leaves learnability intact (WSHUF 2.082 / MWS 2.145); destroying both (MASLOV 2.550) is the only way to break it. Matches the *degeneracy* concept (Tononi–Sporns–Edelman 1999) — here shown as a two-factor manipulation on trainability.
+2. **The original is 3rd of 5** — the biological weight layout acts as an *optimization burden* at this budget (WSHUF beats FLY, t=-2.02; FLY σ=0.118 is 3.5× WSHUF's). "Good wiring" ≠ "easy wiring".
+3. **Structure buys reliability, not just mean performance**: RANDOM has the highest seed variance (σ=0.284) — structureless wiring gambles on initialization. MASLOV is consistently mediocre (σ=0.047).
+4. **State-level exposure bias** (S4): only the real connectome collapses under stateful BPTT — a shortcut conditioned on hidden-state trajectory statistics (cold teacher-forced CE 5.7–6.6 vs unigram 3.08, 'e' 82–97%). Degree-preserving null stays healthy (2.599). Warming up to 5,000 chars does not recover → not hidden memory, but distribution-conditioned shortcut.
+5. **Methodological correction**: degree-preserving (Maslov–Sneppen) nulls destroy topology AND weight-hub correlation simultaneously. Claims of "topology effects" built on such nulls are confounded — WSHUF/MWS isolate the two factors.
+6. **Where it sits**: char-level n-gram ladder on TinyStories (our measurement): unigram 3.081 / bigram 2.297 / trigram 1.683. FLY (2.225) sits at bigram level with ~1/10 the exposure; the ceiling tracks the TBPTT-32 window.
+
+## 실험 설정
+
+- **커넥톤**: MaleCNS v1.0 (brain + nerve cord, 수컷 성충 전체 CNS)
+  - 그래프: 뉴런 211,577 / 연결 10,653,945 (weight≥3 컷) / 시냅스 합 1.25억
+  - E/I 부호: 신경전달물질 예측 매핑 (+21.16M/−4.87M 시냅스)
+  - 셀타입 11,752종 → 타입쌍 α (FLY 1.52M — 재배선 시 쌍 국소성 파괴로 4.9M까지 증가, Methods에서 교란 명시)
+  - 허브: in-degree 중앙값 27, 최대 9,193; strength 상위 1%가 전체 무게의 20.35%
+- **모델**: leaky-RNN h←0.5h+0.5tanh(Wh+b), τ=0.5, clamp ±10. 학습: α(쌍별 스케일 [0,3]) + type_bias + sensory 임베딩(107→256) + motor readout(512→107). 그래프 동결.
+- **과제**: TinyStories 60M chars, char-level next-token (vocab 107)
+- **학습**: Adam 1e-3, B=2, truncated BPTT (warm 32 + train 32), 20k steps, 시드 3회
+- **5-way 대조** (같은 엣지 수·가중치 다중집합·E/I 비율·학습 설정):
+  - FLY 원본 / MASLOV 차수보존 재배선 / MWS strength보존 재배선(같은 클래스 내 스왑) / WSHUF 위상고정+가중치만 셔플 / RANDOM 완전재배선
+  - 그래프 생성·검증: `make_controls.py`, `maslov_rewire.py` (per-node in-degree/in-strength 완전일치 검증 포함)
+
+## 스테이지 히스토리
+
+| Stage | 내용 | 결과 |
+|---|---|---|
+| 0 | 유충 2,952뉴런 스모크 (CPU) | 파이프라인 검증 |
+| 1 | flyvis visual 45,669 + 무작위 대조 | 무작위 2.88 < 파리 3.09 — 시각 커넥톤은 언어에 부적합 (예외 케이스) |
+| 2 | MaleCNS 전체 3-way 8k | FLY 2.629 > MASLOV 2.952 > RANDOM 3.112 |
+| 2.6 | 20k 장기학습 | FLY 2.332 vs MASLOV 2.569 — 격차 유지 |
+| 4 | stateful BPTT + 경계정렬 | FLY만 h=0 붕괴('e' 97%) — state-level exposure bias 발견 |
+| 5 | 경계정렬 단독 | FLY 2.327 — 붕괴의 필요조건은 stateful |
+| 6 | 시드 3회 반복 | FLY 2.225±0.118 vs MASLOV 2.550±0.047 (완전분리) |
+| 7 | **MWS: strength 보존 재배선** | **2.145±0.050 — 원복! 위상 파괴해도 무게 배치만 남으면 회복** |
+| 8 | **WSHUF: 위상 보존 + 가중치 셔플** | **2.082±0.033 — 전체 최저. 무게 배치 파괴해도 위상만 남으면 회복+** |
+| 8b | RANDOM 3시드 | 2.816±0.284 — 최고 분산, "구조=신뢰도" 발견 |
+
+## 샘플 (학습에 따른 진화)
+
+```
+8k:   Once upon a time ar"e. o'n ryol lolded...
+20k:  ...the thed int he whend tered wund the terind ger and he nre wo nteot ad und id...
+최종:  Once upon a time etreid. He wad. He ke wa ar. He il ut ag sal aad an fa ad ake and.""
+       She. foked hare wavig t aadpe at lovhe so...
+```
+
+철자 오류 많지만 관사·구두점·대화체 리듬 형성. 전체 타임랩스: `fly20k_results.json`의 `snapshots`.
+
+## 저장소 구성
+
+```
+prep_malecns.py      MaleCNS feather → npz 전처리
+celltype_model.py    셀타입 쌍별 α 모델
+maslov_rewire.py     Maslov–Sneppen 차수보존 재배선 + 검증
+make_controls.py     WSHUF / RANDOM 그래프 생성 (seed 888/999, 검증 포함)
+vast_hunt.py         Vast.ai 자동 헌팅 (SSH 프록시 장애 대응)
+dashboard.py         실시간 학습 대시보드
+s6_*_results.json    5-way × 3시드 최종 수치 + losses
+train_s6_*.log       학습 로그
+PAPER_KO.md          논문 한국어 전문 초안
+PAPER_SKELETON.md    논문 골격 (영문 전환용)
+```
+
+## 재현
+
+```bash
+python3 -m venv .venv && source .venv/bin/activate
+pip install torch numpy pandas pyarrow matplotlib
+# 커넥톤: MaleCNS v1.0 (CC BY 4.0)
+#   https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/connectome-weights-male-cns-v1.0-minconf-0.5.feather
+# 데이터: https://huggingface.co/datasets/roneneldan/TinyStories
+python prep_malecns.py    # → malecns_graph.npz
+python maslov_rewire.py   # → malecns_maslov.npz
+python make_controls.py   # → malecns_wshuf.npz, malecns_random.npz
+# 학습: /tmp/vast_s6.sh 참조 (B2/TBPTT32, 20k steps, ~$0.4/런)
+```
+
+16GB GPU 한 장이면 충분 (~9.7GB 사용). 런당 ~$0.4.
+
+## 학계 위치
+
+- 위상 이점 주장: Suárez 2021 (인간 macro reservoir) — 본 결과는 이를 **설정 의존적으로 재해석**: 가중치를 학습하는 설정에서는 위상도 무게 배치도 단독 충분조건
+- Reservoir "위상 무관성": Rodan–Tiňo 2010 (단순 사이클 ESN) — 우리의 신규는 이인자 AND-붕괴 패턴 + 훈련 기반 측정
+- Degeneracy: Tononi–Sporns–Edelman 1999, Price–Friston 2002 — 개념의 조작적 이인자판
+- 근접 선행 (반드시 인용·비교): larval fly 선형 연산자 분해 (arXiv 2606.17745), C. elegans 섭동 배터리 (arXiv 2609.07355)
+- 상세: `LITERATURE.md`
+
+## 라이선스·데이터
+
+- 코드: MIT
+- MaleCNS v1.0: CC BY 4.0 (Janelia)
+- TinyStories: CC BY 4.0 (Microsoft)
+
+## 한계 (정직하게)
+
+- 절대 성능은 bigram 수준 — 상한은 TBPTT-32 수용창과 정합 [추론]
+- 시드 분산 비대칭(FLY vs MASLOV)은 n=3으로 유의하지 않음 — 평균 격차만 주장
+- WSHUF 우위(t=-2.02)도 n=3 탐색적 수준; 100k 연장 런에서 역전 가능성 미배제
+- α 파라미터 수가 재배선 조건에서 3.2배 증가하는 교란 — WSHUF-FLY 비교만 동일-α로 깨끗
+- 단일 과제(char-LM), 학습량 TinyStories 원논문의 0.001% — 심한 데이터 기아 상태
+- "파리 뇌가 언어를 이해한다"가 아님 — 커넥톰 구조의 trainability를 언어 과제로 측정한 것
+
+## 로드맵
+
+- [x] 3-way → 5-way 대조 × 3시드 완결
+- [x] stateful BPTT 붕괴 발견 + 반증 실험
+- [x] n-gram 사다리 측정 (unigram/bigram/trigram)
+- [ ] Related Work: 경쟁 논문 2편 정독·비교 서술
+- [ ] TBPTT 128 수용창 확장 — "위상은 긴 문맥에서 다시 유의해지는가"
+- [ ] 100k 연장 — WSHUF 우위의 예산 의존성 확인
+- [ ] word-level 500단어 제한 코퍼스
+- [ ] arXiv 프리핀트 → ICLR 2027 워크숍 (Re-Align 계열, ~2/1 마감)
